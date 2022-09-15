@@ -1,0 +1,102 @@
+<div class="container">
+
+  <form autocomplete="off" (ngSubmit)="searchPlayer()">
+
+    <div class="platform-container">
+
+      <label for="acti">
+        <div class="platform-container__item" [ngClass]="{'active': platform === 'acti'}">
+          <div class="platform-item_white">
+            <div class="platform-item__logo">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/CallofDutyLogo.svg/1200px-CallofDutyLogo.svg.png"
+                  alt=""
+                  />
+            </div>
+          </div>
+              <input
+                type="radio"
+                id="acti"
+                class="radio"
+                value="acti"
+                name="platform"
+                (change)="radioChangeHandler($event)"
+              />
+            <div class="platform-name">Activision ID</div>
+        </div>
+      </label>
+
+      <label for="psn">
+        <div class="platform-container__item"  [ngClass]="{'active': platform === 'psn'}">
+          <div class="platform-item_white">
+            <div class="platform-item__logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg" alt="" />
+            </div>
+          </div>
+              <input
+                type="radio"
+                id="psn"
+                class="radio"
+                value="psn"
+                name="platform"
+                (change)="radioChangeHandler($event)"
+              />
+            <div class="platform-name">PlayStation</div>
+        </div>
+      </label>
+
+      <label for="battle">
+        <div class="platform-container__item"  [ngClass]="{'active': platform === 'battle'}">
+          <div class="platform-item_white">
+            <div class="platform-item__logo">
+              <img src="https://static.wikia.nocookie.net/logopedia/images/f/f6/Battle.net_2021_Icon.svg" alt="" />
+            </div>
+          </div>
+              <input
+                type="radio"
+                id="battle"
+                class="radio"
+                value="battle"
+                name="platform"
+                (change)="radioChangeHandler($event)"
+              />
+            <div class="platform-name">Battle</div>
+        </div>
+      </label>
+
+      <label for="xbl">
+        <div class="platform-container__item"  [ngClass]="{'active': platform === 'xbl'}">
+          <div class="platform-item_white">
+            <div class="platform-item__logo">
+              <img src="assets/xbox-logo.png" alt="" />
+            </div>
+          </div>
+              <input
+                type="radio"
+                id="xbl"
+                class="radio"
+                value="xbl"
+                name="platform"
+                (change)="radioChangeHandler($event)"
+              />
+            <div class="platform-name">XboxLive</div>
+        </div>
+      </label>
+
+    </div>
+
+    <div class="search-container">
+      <input
+        type="search"
+        value
+        placeholder="Introduce tu id"
+        class="form-control"
+        name="gametarg"
+        [(ngModel)]="gametarg"
+      />
+      <button class="btn btn-primary">Buscar</button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-container {
+    background-color: #1e1e1e;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px rgb(87, 87, 87) solid;
+}
+
+.logo {
+    height: 99px;
+}
