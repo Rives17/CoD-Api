@@ -1,5 +1,6 @@
 *{
     color: white;
+    margin: auto;
     padding: 0;
 }
 
@@ -109,4 +110,16 @@ h1{
 
 h3 {
     margin: 0;
+}
+
+/* Conditions */
+
+.master {
+    background: rgb(47,0,201);
+    background: linear-gradient(45deg, rgba(47,0,201,1) 30%, rgba(101,0,168,1) 100%);
+}
+
+.diamond {
+    background: rgb(2, 176, 219);
+    background: linear-gradient(45deg, rgb(0, 140, 255) 30%, rgb(93, 217, 255) 100%);
 }

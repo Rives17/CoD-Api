@@ -1,16 +1,30 @@
+
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 .nav-container {
-    background-color: #1e1e1e;
-    height: 100px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    background-color: #1e1e1e;
     border-bottom: 1px rgb(87, 87, 87) solid;
 }
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
 
 .logo {
     height: 99px;
 }
+
+.container-dropdown {
+    float: right;
+}
+

@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { PlayerStats } from '../interfaces/player.interface';
 import { LastMatches } from '../interfaces/matches.interface';
 
-import { timeout, map } from 'rxjs/operators';
-
 
 
 @Injectable({
