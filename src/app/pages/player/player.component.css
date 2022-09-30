@@ -17,7 +17,7 @@
     height: 120px;
     margin: 10px;
     max-width: 160px;
-    min-width: 160px;
+    min-width: 124px;
 }
 
 .row{
@@ -28,9 +28,8 @@
     background-color: #363636;
     border: 2px black solid;
     border-radius: 20px;
-    width: 100%;
+    width: 70%;
     height: auto;
-    margin-bottom: 20px;
 }
 
 .row_match{
@@ -52,6 +51,7 @@
 h1 {
     font-size: 35px;
     font-weight: bold;
+    width: auto;
 }
 
 .title-last20 {

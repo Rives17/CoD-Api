@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { StatsService } from 'src/app/services/stats.service';
-import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
