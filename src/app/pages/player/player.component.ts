@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { delay, map, switchMap, timeout } from 'rxjs/operators';
+import { delay, switchMap, map } from 'rxjs/operators';
 
 import { StatsService } from '../../services/stats.service';
 import { Br } from '../../interfaces/player.interface';
@@ -12,6 +12,8 @@ import { Summary, Match } from '../../interfaces/matches.interface';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
+
+ gametarg: string = ''
 
 
   public players: Br[] = [];
@@ -46,7 +48,6 @@ export class PlayerComponent implements OnInit {
       this.matches = resp.matches
       this.summary.push(resp.summary)
     }) ;
-
 
   }
 
