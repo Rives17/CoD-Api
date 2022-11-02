@@ -1,0 +1,83 @@
+<div class="container">
+
+  <div class="container-matches" *ngFor="let sum of summary">
+    <h1 class="title-last20">ÚLTIMAS 20 PARTIDAS</h1>
+    <div class="container-last20">
+      <div class="row latets">
+        <div
+          [ngClass]="{ 'insane': sum.all.kdRatio >= 3, 'master': sum.all.kdRatio < 3, 'diamond': sum.all.kdRatio < 2 }"
+          class="col-3_all"
+        >
+          <h1>{{ sum.all.kdRatio | number: "1.0-2" }}</h1>
+          <h3>KD</h3>
+        </div>
+        <div
+          [ngClass]="{ insane: sum.all.killsPerGame >= 6 }"
+          [ngClass]="{ diamond: sum.all.killsPerGame < 6 }"
+          class="col-3_all"
+        >
+          <h1>{{ sum.all.killsPerGame | number: "1.0-2" }}</h1>
+          <h3>Bajas/Partida</h3>
+        </div>
+        <div class="col-3_all" [ngClass]="{ first: wins >= 1 }">
+        <h1>{{ wins | number: "1.0-2" }}</h1>
+        <h3>Wins</h3>
+      </div>
+        <div class="col-3_all">
+          <h1>{{ sum.all.kills | number: "1.0-2" }}</h1>
+          <h3>Kills</h3>
+        </div>
+        <div class="col-3_all">
+          <h1>{{ sum.all.headshotPercentage | percent: "1.0-2" }}</h1>
+          <h3>Headshots</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="row_match" *ngFor="let match of matches">
+      <div class="container-match">
+        <div class="col-3_match" [ngClass]="{ first: match.playerStats.teamPlacement === 1 }">
+          <h1>{{ match.playerStats.teamPlacement }}</h1>
+          <h3>Posición</h3>
+        </div>
+        <div class="col-3_match">
+          <h1>{{ match.playerStats.kills }}</h1>
+          <h3>Kills</h3>
+        </div>
+      </div>
+      <div class="container-team">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Player</th>
+              <th scope="col">KD</th>
+              <th scope="col">Muertes</th>
+              <th scope="col">Daño</th>
+              <th scope="col">Gulag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>[{{ match.player.clantag }}] {{ match.player.username }}</th>
+              <td>{{ sum.all.kdRatio | number: "1.0-2" }}</td>
+              <td>{{ match.playerStats.deaths }}</td>
+              <td>{{ match.playerStats.damageTaken | number: "1.0-2"}}</td>
+              <td>{{ match.playerStats.gulagKills > 0 ? "✓" : "X" }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ////////////////// -->
+
+<!-- <pre>
+    {{players | json}}
+</pre>
+
+<pre>{{summary | json}}</pre> -->
+
+<!-- <pre>{{matches | json}}</pre> -->

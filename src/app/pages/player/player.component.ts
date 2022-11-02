@@ -1,10 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { delay, switchMap, map } from 'rxjs/operators';
-
-import { StatsService } from '../../services/stats.service';
-import { Br } from '../../interfaces/player.interface';
-import { Summary, Match } from '../../interfaces/matches.interface';
+import { param } from 'express-validator';
+import { map, switchMap } from 'rxjs/operators';
+import { StatsService } from 'src/app/services/stats.service';
 
 @Component({
   selector: 'app-player',
@@ -13,43 +11,20 @@ import { Summary, Match } from '../../interfaces/matches.interface';
 })
 export class PlayerComponent implements OnInit {
 
- gametarg: string = ''
-
-
-  public players: Br[] = [];
-  public matches: Match[] = [];
-  public summary: Summary[] = [];
+  public gametarg: string = '';
 
 
   constructor(private activatedRoute: ActivatedRoute,
               private statsService: StatsService) { }
 
-
-
   ngOnInit(): void {
-
     this.activatedRoute.params
-    .pipe(
-      switchMap( ({gametarg, platform}) => this.statsService.getPlayer(gametarg, platform))
-    )
-      .subscribe(resp => {
-        console.log(resp);
-        this.players.push(resp.br_all)
-      });
+      .subscribe( params => {
+        const gametarg: any = params['gametarg'];
 
-    this.activatedRoute.params
-    .pipe(
-      delay(1500),
-      switchMap( ({gametarg, platform}) => this.statsService.getMatches(gametarg, platform))
-    )
-    .subscribe( resp => {
-      console.log(resp);
-
-      this.matches = resp.matches
-      this.summary.push(resp.summary)
-    }) ;
-
+        this.gametarg = gametarg
+        console.log(gametarg)
+      })
   }
-
 
 }

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: {'X-RapidAPI-Key': '8ac248a33cmsh51ae540668dde23p1a104cjsn126481429d5e'}
+  apiKey: {'X-RapidAPI-Key': '8ac248a33cmsh51ae540668dde23p1a104cjsn126481429d5e',
+          'X-RapidAPI-Host': 'call-of-duty-modern-warfare.p.rapidapi.com'},
 };
 
 /*

@@ -16,15 +16,28 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100px;
+    height: 7vh;
 }
-
 
 .logo {
-    height: 99px;
+    height: 60px;
 }
 
-.container-dropdown {
-    float: right;
+.container-user {
+    display: flex;
+}
+
+.login {
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 20px;
+}
+.signup {
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 20px;
+}
+
+h3 {
+    margin: 0px;
+    padding: 5px;
 }
 

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row" *ngFor="let player of players">
+      <div class="col-4">
+        <h1>{{ player.kdRatio | number: "1.0-2" }}</h1>
+        <h3>KD</h3>
+      </div>
+      <div class="col-4">
+        <h1>{{ player.wins | number: "1.0-2" }}</h1>
+        <h3>WINS</h3>
+      </div>
+      <div class="col-4">
+        <h1>{{ player.kills | number: "1.0-2" }}</h1>
+        <h3>KILLS</h3>
+      </div>
+    </div>
+</div>
